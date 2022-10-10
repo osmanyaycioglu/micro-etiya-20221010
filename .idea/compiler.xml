@@ -7,12 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="spring-basics" />
+        <module name="node-configuration" />
         <module name="node-discovery" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="node-configuration" options="-parameters" />
       <module name="node-discovery" options="-parameters" />
       <module name="spring-basics" options="-parameters" />
     </option>

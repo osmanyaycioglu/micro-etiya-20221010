@@ -13,6 +13,7 @@
   <modules>
     <module>spring-basics</module>
     <module>node-discovery</module>
+    <module>node-configuration</module>
   </modules>
 
   <properties>
