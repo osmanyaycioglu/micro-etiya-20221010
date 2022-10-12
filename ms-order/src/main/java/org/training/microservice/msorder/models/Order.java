@@ -4,6 +4,7 @@ import org.training.microservice.msorder.validation.StartCheck;
 
 import javax.validation.constraints.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 public class Order {
@@ -14,6 +15,7 @@ public class Order {
     private Integer       minutes;
     private LocalDateTime receiveDate;
     private EOrderStatus  orderStatus = EOrderStatus.ACTIVE;
+    private List<Meal>    mealList;
 
     public Long getOrderId() {
         return orderId;
@@ -73,12 +75,23 @@ public class Order {
 
     @Override
     public String toString() {
-        return "OrderRestObj{" +
-                "customerName='" + customerName + '\'' +
+        return "Order{" +
+                "orderId=" + orderId +
+                ", customerName='" + customerName + '\'' +
                 ", customerNumber='" + customerNumber + '\'' +
                 ", order='" + order + '\'' +
                 ", minutes=" + minutes +
                 ", receiveDate=" + receiveDate +
+                ", orderStatus=" + orderStatus +
+                ", mealList=" + mealList +
                 '}';
+    }
+
+    public List<Meal> getMealList() {
+        return mealList;
+    }
+
+    public void setMealList(List<Meal> mealList) {
+        this.mealList = mealList;
     }
 }

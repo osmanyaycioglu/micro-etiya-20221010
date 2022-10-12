@@ -82,4 +82,13 @@ public class ErrorAdvice {
                                            .setCode(5000));
     }
 
+    @ExceptionHandler(MSRestClientException.class)
+    @ResponseStatus(HttpStatus.BAD_GATEWAY)
+    public RestErrorObj handle(MSRestClientException exp) {
+        return createBaseErrorObj()
+                .setDesc("microservisi çağırırken problem oluştu")
+                .setCode(3048)
+                .addSubError(exp.getRestErrorObj());
+    }
+
 }

@@ -16,6 +16,8 @@
     <module>node-configuration</module>
     <module>ms-order</module>
     <module>ms-common</module>
+    <module>ms-accounting</module>
+    <module>ms-accounting-api</module>
   </modules>
 
   <properties>

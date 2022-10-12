@@ -6,6 +6,7 @@ import org.training.microservice.msorder.validation.StartCheck;
 import javax.validation.constraints.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class OrderRestObj {
     @NotEmpty(message = "customerName boş olamaz")
@@ -22,6 +23,15 @@ public class OrderRestObj {
     private Integer minutes;
     @Future
     private LocalDateTime receiveDate;
+    private List<MealRestObj> mealList;
+
+    public List<MealRestObj> getMealList() {
+        return mealList;
+    }
+
+    public void setMealList(List<MealRestObj> mealList) {
+        this.mealList = mealList;
+    }
 
     public String getCustomerName() {
         return customerName;

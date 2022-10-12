@@ -36,6 +36,22 @@ public class OrderProcessingController {
         return orderProcessService.placeOrder(IOrderMappings.MAPPER.toOrder(order));
     }
 
+    @PostMapping("/place2")
+    public String placeOrder2(@Valid @RequestBody OrderRestObj order) {
+        if (order.getCustomerName() == null) {
+            throw new IllegalArgumentException("name boş olamaz");
+        }
+        return orderProcessService.placeOrder2(IOrderMappings.MAPPER.toOrder(order));
+    }
+
+    @PostMapping("/place3")
+    public String placeOrder3(@Valid @RequestBody OrderRestObj order) {
+        if (order.getCustomerName() == null) {
+            throw new IllegalArgumentException("name boş olamaz");
+        }
+        return orderProcessService.placeOrder3(IOrderMappings.MAPPER.toOrder(order));
+    }
+
     @GetMapping("/cancel/{abc}")
     public String cancel(@Parameter(description = "order Id input") @PathVariable("abc") String orderId) {
         return "Canceled";
