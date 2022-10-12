@@ -1,0 +1,31 @@
+app:
+  microservice:
+    name: food.restaurant.${spring.application.name}
+server:
+  error:
+    include-binding-errors: always
+    include-exception: true
+    include-message: always
+    include-stacktrace: always
+  port: ${PORT:10000}
+spring:
+  application:
+    name: order
+  config:
+    import: configserver:http://127.0.0.1:8888
+  cloud:
+    loadbalancer:
+      retry:
+        max-retries-on-same-service-instance: 0
+        max-retries-on-next-service-instance: 3
+        retry-on-all-operations: true
+        enabled: true
+resilience4j:
+  retry:
+    instances:
+      accountingRetry:
+        wait-duration: '1s'
+        max-attempts: 3
+        ignore-exceptions:
+          - java.lang.IllegalCallerException
+

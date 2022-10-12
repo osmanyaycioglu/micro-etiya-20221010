@@ -3,6 +3,7 @@ package org.training.microservice.msorder.integrations.accounting;
 import com.netflix.appinfo.InstanceInfo;
 import com.netflix.discovery.EurekaClient;
 import com.netflix.discovery.shared.Application;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -22,6 +23,7 @@ public class AccountingIntegration {
     @Autowired
     private IAccountingFeignClient accountingFeignClient;
 
+    // @Retry(name = "accountingRetry")
     public String pay3(Long customerId,
                        double price) {
         PaymentRequest paymentRequest = new PaymentRequest();

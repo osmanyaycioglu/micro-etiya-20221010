@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 import org.training.common.ClientErrorConfig;
 import org.training.common.ErrorConfig;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = {"org.training.microservice.msorder","org.training.microservice.resilience"})
 //@SpringBootApplication(scanBasePackages = {"org.training.microservice.msorder",
 //                                           "org.training.common"
 //})
