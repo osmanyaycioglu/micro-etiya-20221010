@@ -18,6 +18,7 @@
     <module>ms-common</module>
     <module>ms-accounting</module>
     <module>ms-accounting-api</module>
+    <module>ms-notification</module>
   </modules>
 
   <properties>

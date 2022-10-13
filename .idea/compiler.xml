@@ -6,11 +6,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="ms-notification" />
+        <module name="ms-common" />
+        <module name="ms-accounting" />
         <module name="spring-basics" />
         <module name="node-configuration" />
-        <module name="ms-common" />
         <module name="ms-accounting-api" />
-        <module name="ms-accounting" />
         <module name="node-discovery" />
       </profile>
       <profile name="Annotation profile for micro-etiya-20221010" enabled="true">
@@ -30,6 +31,7 @@
       <module name="ms-accounting" options="-parameters" />
       <module name="ms-accounting-api" options="-parameters" />
       <module name="ms-common" options="-parameters" />
+      <module name="ms-notification" options="-parameters" />
       <module name="ms-order" options="-parameters" />
       <module name="node-configuration" options="-parameters" />
       <module name="node-discovery" options="-parameters" />
