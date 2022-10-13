@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/ms-accounting/pom.xml" />
         <option value="$PROJECT_DIR$/ms-accounting-api/pom.xml" />
         <option value="$PROJECT_DIR$/ms-notification/pom.xml" />
+        <option value="$PROJECT_DIR$/apigw-accounting/pom.xml" />
       </list>
     </option>
   </component>

@@ -4,6 +4,6 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.training.microservice.accounting.rest.IPaymentController;
 
 // @FeignClient(value = "ACCOUNTING", fallback = AccountingFallback.class)
-@FeignClient(value = "ACCOUNTING")
+@FeignClient(value = "ACCOUNTINGAPI")
 public interface IAccountingFeignClient extends IPaymentController {
 }
