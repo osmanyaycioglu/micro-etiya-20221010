@@ -28,4 +28,23 @@ resilience4j:
         max-attempts: 3
         ignore-exceptions:
           - java.lang.IllegalCallerException
+        retry-exception-predicate: org.training.microservice.resilience.RetryExpHandler
+        result-predicate: org.training.microservice.resilience.ResultRetryHandler
+    retry-aspect-order: 1
+  circuitbreaker:
+    instances:
+      accountingCB:
+        sliding-window-type: count_based
+        sliding-window-size: 20
+        minimum-number-of-calls: 10
+        failure-rate-threshold: 30
+        wait-duration-in-open-state: '5s'
+        max-wait-duration-in-half-open-state: '15s'
+        permitted-number-of-calls-in-half-open-state: 10
+        slow-call-duration-threshold: '100ms'
+        slow-call-rate-threshold: 50
+        register-health-indicator: true
+    circuit-breaker-aspect-order: 2
+
+
 
