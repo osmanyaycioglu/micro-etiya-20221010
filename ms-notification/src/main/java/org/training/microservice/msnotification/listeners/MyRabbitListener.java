@@ -6,6 +6,7 @@ import org.springframework.amqp.rabbit.annotation.Queue;
 import org.springframework.amqp.rabbit.annotation.QueueBinding;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -19,7 +20,8 @@ public class MyRabbitListener {
             exchange = @Exchange(value = "message-exchange", autoDelete = "false", durable = "true", type = ExchangeTypes.DIRECT),
             key = "sms-message"
     ))
-    public void handle(String str) {
+    // @SendTo("exchange/routekey")
+    public void handle(NotifyMessage str) {
         System.out.println(port + " Received SMS : " + str);
     }
 
